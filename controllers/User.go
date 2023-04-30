@@ -22,6 +22,14 @@ func InitUserController(mongoCollection *mongo.Collection) *UserController {
 	}
 }
 
+// @Summary Add User
+// @Description create new user
+// @Param body body models.UserModel true "body"
+// @Tags User
+// @Accept  json
+// @Produce  json
+// @Success 200 {object} object{code="200",status="OK",data=[]models.UserModel,"executon_time"=0.0} "OK"
+// @Router /api/v1/user [post]
 func (userController UserController) CreateUserController(c *gin.Context) {
 	start := time.Now()
 	user := models.UserModel{}

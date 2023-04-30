@@ -9,7 +9,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-var MongoClient *mongo.Collection
+var MongoCollection *mongo.Collection
 
 func MongoConfig() (*mongo.Client, error) {
 	err := godotenv.Load(".env")
@@ -22,6 +22,6 @@ func MongoConfig() (*mongo.Client, error) {
 	if err != nil {
 		return nil, err
 	}
-	MongoClient = client.Database(os.Getenv("MONGO_DB")).Collection(os.Getenv("MONGO_USER_COLLECTION"))
+	MongoCollection = client.Database(os.Getenv("MONGO_DB")).Collection(os.Getenv("MONGO_USER_COLLECTION"))
 	return client, nil
 }
