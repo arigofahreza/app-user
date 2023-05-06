@@ -33,6 +33,10 @@ func main() {
 		account := mainGroup.Group("/user")
 		{
 			account.POST("", userController.CreateUserController)
+			account.GET("/", userController.GetUserController)
+			account.GET("/:id", userController.GetUserByIdController)
+			account.PUT("", userController.UpdateUserController)
+			account.DELETE("/:id", userController.DeleteUserController)
 		}
 	}
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
