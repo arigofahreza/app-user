@@ -11,9 +11,3 @@ type UserModel struct {
 	PhoneNumber string `json:"phone_number" bson:"phone_number"`
 }
 
-type ResponseModel struct {
-	Code          int
-	Status        string
-	Data          interface{}
-	ExecutionTime float64
-}
